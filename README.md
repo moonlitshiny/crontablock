@@ -1,6 +1,8 @@
 # CrontabLock
 ## 简介：
 crontablock是一个非侵入式的crontab任务锁，解决多台设备同时跑同一个crontab任务，底层使用redis原子操作做锁操作
+该工具在压测环境上百台设备压测过，现已投入运营环境使用
+
 ## 参数：
 ## Usage of ./crontablock:
    ```bash
@@ -15,9 +17,9 @@ crontablock是一个非侵入式的crontab任务锁，解决多台设备同时�
       -p string
             password:redis密码 (default "")
       -r int
-            reconnect times:如果由于连接断开导致加锁失败，重试次数 (default 3)
+            reconnect times:当链接断开时会尝试重连几次，如果由于连接断开导致加锁失败，重试次数 (default 3)
       -s duration
-            max Sleep Time:如果由于连接断开导致加锁失败，每次重试等待时间（秒） (default 3ns)
+            max Sleep Time:当链接断开时会尝试重连几次，如果由于连接断开导致加锁失败，每次重试等待时间（秒） (default 3ns)
    ```
 
 ## 使用例子：
